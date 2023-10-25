@@ -1,1 +1,207 @@
-/* You can add global styles to this file, and also import other style files */
+//Mixins
+
+@mixin home-title {
+    color: $dark-gold;
+    text-decoration: underline;
+}
+
+
+
+//Variables
+
+$black: #000000;
+$white: #FFFFFF;
+$dark-gold: #d89b00;
+$bright-gold: #ffb800;
+$neutral-gold: #f0ad00;
+
+//Elements
+
+body {
+    background-color: $black;
+    color: $white;
+    text-align: center;
+}
+
+a {
+    color: $dark-gold;
+}
+
+a:hover {
+    color: $bright-gold;
+}
+
+//Classes
+
+/*Navbar*/
+.navbar {
+    background-color: $neutral-gold;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.navbar .nav-link {
+    font-weight: bold;
+    margin-left: 4rem;
+}
+
+.navbar .nav-link:hover {
+    color: $white;
+}
+
+/*Home Page*/
+
+.greeting {
+    margin-bottom: 5rem;
+}
+
+.skill-container {
+    margin-top: 2rem;
+    border: 2px solid $neutral-gold;
+    margin-bottom: 3rem;
+    padding: 2rem;
+
+    h3 {
+        @include home-title;
+        margin-bottom: 1rem;
+    }
+}
+
+.skills {
+    list-style-type: none;
+    margin: 0 auto;
+    text-align: center;
+    columns: 3;
+}
+
+.education {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+
+    h3 {
+        @include home-title;
+    }
+}
+
+.projects {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    dt {
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        @include home-title;
+        margin-bottom: 3rem;
+    }
+
+    dl {
+        text-align: left;
+    }
+
+    dd {
+        margin-bottom: 1rem;
+    }
+}
+
+.github {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    border: 2px solid $neutral-gold;
+    padding: 1rem 1rem;
+
+    a {
+        font-size: 20px;
+    }
+}
+
+/*About Page*/
+
+.img-fluid {
+    max-width: 40vw;
+    max-height: 40vw;
+}
+
+.d-flex {
+    padding: 1rem;
+    border: 2px solid $neutral-gold;
+    margin-bottom: 2rem;
+}
+
+.about-skills {
+    text-align: center;
+
+    h4 {
+        color: $dark-gold;
+        text-decoration: underline;
+    }
+
+    .skill-list {
+        list-style-position: inside;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+
+}
+
+@media all and (max-width: 900px) {
+    .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-fluid {
+        margin-bottom: 1rem;
+    }
+}
+
+/*Contact Page*/
+
+.title {
+    margin-bottom: 2rem;
+}
+
+.contact-title {
+    color: $dark-gold;
+}
+
+.contact-form {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem 1rem;
+    border: 2px solid $neutral-gold;
+
+    form {
+        text-align: center;
+        align-items: center;
+    }
+
+    .row {
+        max-width: 60%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+
+        input, textarea {
+            border-radius: 10px;
+        }
+
+        textarea {
+            height: 5rem;
+            overflow-y: auto;
+        }
+
+        .btn-primary {
+            background-color: $neutral-gold;
+            border: 1px solid $white;
+            color: $black;
+            max-width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
