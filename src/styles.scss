@@ -1,69 +1,123 @@
+@import '/styleBreakpoints.scss';
+
 //Mixins
 
 @mixin home-title {
-    color: $dark-gold;
+    color: $title;
     text-decoration: underline;
+    font-size: 30px;
 }
 
 
 
 //Variables
 
-$black: #000000;
-$white: #FFFFFF;
-$dark-gold: #d89b00;
-$bright-gold: #ffb800;
-$neutral-gold: #f0ad00;
+$background: #023047;
+$border: #219ebc;
+$text: #FFFFFF;
+$accent: #ffb703;
+$title: #fdc500;
 
-//Elements
+//Globals
 
 body {
-    background-color: $black;
-    color: $white;
     text-align: center;
+    background-color: $border;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-a {
-    color: $dark-gold;
+.main-content {
+    width: 90%;
+    height: 100%;
+    background-size: cover;
+    margin: 0 auto;
+    padding: 40px 10px;
+    background-color: $background;
+    color: $text;
+    min-height: calc(100vh - 75px);
 }
-
-a:hover {
-    color: $bright-gold;
-}
-
-//Classes
 
 /*Navbar*/
 .navbar {
-    background-color: $neutral-gold;
-    margin-bottom: 2rem;
+    background-color: $accent;
     text-align: center;
+    min-height: 75px;
+}
+
+.navbar .navbar-brand {
+    color: $background;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.navbar-nav {
+    @include lg {
+        margin-right: 100px;
+    }
 }
 
 .navbar .nav-link {
     font-weight: bold;
-    margin-left: 4rem;
+    font-size: 20px;
+    margin-left: 20px;
+    color: $background;
 }
 
 .navbar .nav-link:hover {
-    color: $white;
+    color: $text;
 }
 
 /*Home Page*/
 
 .greeting {
-    margin-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+
+    h1 {
+        font-size: 45px;
+    }
+
+    @include mdMax {
+        flex-direction: column;
+    }
+
+
+}
+
+.home-image {
+    margin-left: 10px;
+    width: 30%;
+    height: 30%;
+    border: 2px solid $accent;
+    border-radius: 50%;
+
+    @include md {
+        width:15%;
+        height:15%;
+    }
+}
+
+.home-photo {
+    width:100%;
+    height:100%;
+    border-radius: 50%;
 }
 
 .skill-container {
-    margin-top: 2rem;
-    border: 2px solid $neutral-gold;
-    margin-bottom: 3rem;
-    padding: 2rem;
+    margin-top: 30px;
+    border: 2px solid $accent;
+    border-radius: 10px;
+    margin-bottom: 75px;
+    padding: 10px;
 
     h3 {
         @include home-title;
-        margin-bottom: 1rem;
     }
 }
 
@@ -72,28 +126,113 @@ a:hover {
     margin: 0 auto;
     text-align: center;
     columns: 3;
+    font-size: 20px;
+
+    @include mdMax {
+        font-size: 14px;
+    }
+
+    @include md {
+        fa-icon {
+            margin-left: 10px;
+        }
+    }
 }
 
 .education {
-    margin-top: 1rem;
-    margin-bottom: 3rem;
+    margin: 75px auto;
+    width: 80%;
+
+    @include lg {
+        width: 50%;
+    }
 
     h3 {
         @include home-title;
+        margin-bottom: 20px;
+    }
+
+    .education-list {
+        list-style-type: inherit;
+        list-style-position: inside;
+        color: $title;
+        text-align: left;
+
+        li {
+            color: $text;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+
     }
 }
 
-.projects {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+.github-container {
+    border: 2px solid $accent;
+    background-color: $border;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
 
-    dt {
-        margin-bottom: 1rem;
+    a {
+        font-size: 30px;
+        color: $accent;
     }
+
+    a:hover {
+        color: $background;
+    }
+
+}
+
+.projectClick {
 
     h3 {
         @include home-title;
-        margin-bottom: 3rem;
+        margin-bottom: 40px;
+    }
+
+    h3:hover {
+        cursor: pointer;
+        color: $text;
+    }
+}
+
+.project-container {
+
+    margin-top: 75px;
+
+    h3 {
+        @include home-title;
+        margin-bottom: 40px;
+    }
+
+    h3:hover {
+        cursor: pointer;
+        color: $text;
+    }
+
+    .project {
+        border: 2px solid $accent;
+        background-color: $border;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 40px;
+
+    }
+
+    dt {
+        font-size: 30px;
+        margin-bottom: 10px;
+
+        a {
+            color: $title;
+        }
+
+        a:hover {
+            color: $background;
+        }
     }
 
     dl {
@@ -101,47 +240,65 @@ a:hover {
     }
 
     dd {
-        margin-bottom: 1rem;
-    }
-}
-
-.github {
-    text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    border: 2px solid $neutral-gold;
-    padding: 1rem 1rem;
-
-    a {
         font-size: 20px;
+    }
+
+    .project-icon {
+        width: 30px;
+        height: 30px;
     }
 }
 
 /*About Page*/
 
-.img-fluid {
-    max-width: 40vw;
-    max-height: 40vw;
-}
-
 .d-flex {
-    padding: 1rem;
-    border: 2px solid $neutral-gold;
-    margin-bottom: 2rem;
+    padding: 15px;
+    border: 2px solid $title;
+    margin-bottom: 75px;
+    justify-content: center;
+
+    .bio {
+        margin-top: 20px;
+        font-size: 17px;
+    }
+
+    .img-fluid {
+        max-height: 700px;
+        max-width: 750px;
+        margin: auto;
+
+        @include sm {
+            max-height: 150px;
+            max-width: 150px;
+        }
+
+        @include md {
+            max-height: 300px;
+            max-width: 300px;
+        }
+    }
+
+    @include lgMax {
+        flex-direction: column;
+    }
 }
 
 .about-skills {
     text-align: center;
 
     h4 {
-        color: $dark-gold;
+        color: $text;
         text-decoration: underline;
     }
 
     .skill-list {
+        list-style-type: none;
         list-style-position: inside;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        font-size: 40px;
+
+        fa-icon {
+            margin-right: 10px;
+        }
     }
 
 
@@ -161,18 +318,20 @@ a:hover {
 /*Contact Page*/
 
 .title {
-    margin-bottom: 2rem;
+    color: $title;
 }
 
 .contact-title {
-    color: $dark-gold;
+    color: $text;
+    margin-bottom: 75px;
 }
 
 .contact-form {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 1rem 1rem;
-    border: 2px solid $neutral-gold;
+    margin-bottom: 100px;
+    padding: 20px;
+    border: 2px solid $title;
+    border-radius: 15px;
+    background-color: $border;
 
     form {
         text-align: center;
@@ -184,24 +343,39 @@ a:hover {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 1rem;
+        margin-bottom: 15px;
+
+        label  {
+            color: $background;
+            font-size: 20px;
+            font-weight: 500;
+        }
 
         input, textarea {
+            border: 2px solid $background;
             border-radius: 10px;
+            font-size: 17px;
+        }
+
+        input:focus, textarea:focus {
+            outline: 2px solid $accent;
+            border: none;
         }
 
         textarea {
-            height: 5rem;
+            height: 400px;
             overflow-y: auto;
         }
 
         .btn-primary {
-            background-color: $neutral-gold;
-            border: 1px solid $white;
-            color: $black;
+            background-color: $title;
+            border: 2px solid $background;
+            color: $background;
+            font-weight: bold;
             max-width: 40%;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 25px;
         }
     }
 }

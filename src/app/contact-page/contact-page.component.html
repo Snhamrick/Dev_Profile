@@ -1,26 +1,27 @@
 <app-nav-bar></app-nav-bar>
-<h1 class="title">Contact Me</h1>
-<h3 class="contact-title">You may contact me via email below</h3>
-<div class="container text-center contact-form">
-    <div class="alert alert-danger" *ngIf="formError"> {{ formError }} </div>
-    <div class="alert alert-success" *ngIf="emailStatus && submitted"> {{ emailResponse }} </div>
-    <div class="alert alert-danger" *ngIf="!emailStatus && submitted && emailResponse"> {{ emailResponse }} </div>
-    <h4>Send Seth Hamrick an Email:</h4>
-    <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
-        <div class="row">
-            <label for="name">Name</label>
-            <input id="name" type="text" formControlName="name">
-        </div>
-        <div class="row">
-            <label for="email">Return Email</label>
-            <input id="email" type="email" formControlName="email">
-        </div>
-        <div class="row">
-        <label for="message">Message</label>
-        <textarea id="message" type="text" formControlName="message"></textarea>
-        </div>
-        <div class="row">
-            <button class="btn btn-primary" type="submit">Send Email</button>
-        </div>
-    </form>
+<div class="main-content">
+    <h1 class="title">Contact Seth</h1>
+    <h3 class="contact-title">You may contact me via email below</h3>
+    <div class="container text-center contact-form">
+        <div class="alert alert-danger" *ngIf="formError"> {{ formError }} </div>
+        <div class="alert alert-success" *ngIf="emailStatus && submitted"> {{ emailResponse }} </div>
+        <div class="alert alert-danger" *ngIf="!emailStatus && submitted && emailResponse"> {{ emailResponse }} </div>
+        <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
+            <div class="row">
+                <label for="name">Your Name</label>
+                <input id="name" type="text" formControlName="name">
+            </div>
+            <div class="row">
+                <label for="email">Return Email</label>
+                <input id="email" type="email" formControlName="email">
+            </div>
+            <div class="row">
+            <label for="message">Message</label>
+            <textarea id="message" type="text" formControlName="message"></textarea>
+            </div>
+            <div class="row">
+                <button class="btn btn-primary" type="submit">Send Email</button>
+            </div>
+        </form>
+    </div>
 </div>

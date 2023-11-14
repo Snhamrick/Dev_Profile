@@ -1,21 +1,26 @@
 <app-nav-bar></app-nav-bar>
-<div class="d-flex about-profile">
-    <img class="img-fluid" src="../../assets/images/candid.jpg" alt="profile image">
-    <div class="bio">
-        <p>Hello, my name is Seth Hamrick, a full-stack/frontend web developer located in Summersville, WV. I have had a unique journey as I first worked as a General Dentist. After graduating dental school and working unsatisfied for 4 years I decided to return to school. I desired a career in which I could work as part of a team to build incredible things. I have recently received my BS degree in computer science from SNHU and I am now hoping to make the leap into the development world. Over the past two years I have loved learning new skills towards web development and continue to do so daily. I am very excited to become part of a team that will enable me to continue growing as an indivdual and as a web developer. Thus far I have focused heavily on use of the Angular framework as I was introduced to it with my education. However, as I mentioned I love to learn and believe I am able to do so rapidly. <br> <br>
-        In my personal time I enjoy spending time with my wife and family, following all sports heavily, and exercising at the gym. When I am not doing these things I often set personal goals and attempt to create personal projects to continue honing my development skills. <br> <br>
-        As I have stated I am very excited to make the leap into the professional develpment world and I am seeking an environment that will enable me to continue learning as part of a team. If your are intersted in contacting me please feel free to send me an email directly from my contact page!</p>
+<div class="main-content">
+    <div class="d-flex about-profile">
+        <img class="img-fluid" src="../../assets/images/candid.jpg" alt="profile image">
+        <div class="bio">
+            <p>Hello, my name is Seth Hamrick, a full stack/frontend web developer. I currently reside in Summersville, WV and have had a somewhat unique journey. I began my career as a General Dentist graduating from WVU in 2019. I worked as a General Dentist for 4 years during which time I sought a different career path. I desired a career where I could collaborate with other people, continue learning daily, and design and build more. I returned to school online at Southern New Hampshire University in 2021 and completed the computer science program in 2023. During my time at SNHU I found my passion for software development, specifically web development. While at SNHU I gained exposure to several programming languages including Python, Java, and C++. I also learned many software development principles including SDLC, security, and Agile development. Towards the end of the program, I was exposed to full stack development with a focus using the MEAN stack. Since that point I have deployed several small projects utilizing the MEAN stack and improving my skills along the way. I am now seeking opportunities to gain professional experience along with working as part of a team to enhance my skills even further. I may have limited experience to this point, but I am highly motivated and believe that I am a rapid learner. <br><br>
+            In my free time I enjoy spending time with my family and wife. I follow all sports heavily and I am an avid fan of Chelsea FC. I also enjoy spending time in the gym lifting weights. When I am not doing these activities, I often do research and practice to help improve in areas that I feel I am lacking.<br><br>
+            As I mentioned previously, I am actively looking for opportunities to gain experience and grow. If you are interested in contacting me, please visit my contact page where you can send me an email directly!
+            </p>
+        </div>
     </div>
-</div>
-<div class="about-skills">
-    <h4>Frontend Skills</h4>
-    <ul class="skill-list">
-        <li>Basic HTML, CSS, SCSS, Javascript</li>
-        <li>Angular Framework, Typescript</li>
-    </ul>
-    <h4>Backend Skills</h4>
-    <ul class="skill-list">
-        <li>Node.js, Express.js, API setup</li>
-        <li>Basic AWS hosting services</li>
-    </ul>
+    <div class="about-skills">
+        <h4>Frontend Skills</h4>
+        <ul class="skill-list">
+            <li><fa-icon [icon]="htmlIcon"></fa-icon> <fa-icon [icon]="cssIcon"></fa-icon> <fa-icon [icon]="sassIcon"></fa-icon> <fa-icon [icon]="bootstrapIcon"></fa-icon> <fa-icon [icon]="jsIcon"></fa-icon> <fa-icon [icon]="angularIcon"></fa-icon></li>
+        </ul>
+        <h4>Backend Skills</h4>
+        <ul class="skill-list">
+            <li><fa-icon [icon]="nodeIcon"></fa-icon> <fa-icon [icon]="awsIcon"></fa-icon> <fa-icon [icon]="javaIcon"></fa-icon> <fa-icon [icon]="pythonIcon"></fa-icon>
+        </ul>
+        <h4>Version Control/Containerization</h4>
+        <ul class="skill-list">
+            <li><fa-icon [icon]="dockerIcon"></fa-icon> <fa-icon [icon]="gitIcon"></fa-icon>
+        </ul>
+    </div>
 </div>

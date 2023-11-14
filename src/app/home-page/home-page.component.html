@@ -1,44 +1,65 @@
 <app-nav-bar></app-nav-bar>
-<div class="greeting">
-    <h1>Hello!</h1>
-    <h2>My name is Seth Hamrick I am a motivated full-stack/frontend web developer</h2>
-</div>
-<div class="container">
+<div class="main-content">
+    <div class="greeting">
+        <h1>Seth Hamrick, Fullstack/Frontend Web Developer</h1>
+        <div class="home-image">
+            <img class="home-photo" src="../../assets/images/homeImage.jpg" alt="Profile Photo">
+        </div>
+    </div>
     <div class="education">
         <h3>Education</h3>
-        <h4>BS degree in computer science from Southern New Hampshire University, 2023</h4>
-    </div>
-    <div class="skill-container">
-        <h3>Skills, Frameworks, and Tools</h3>
-        <ul class="skills">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>SCSS</li>
-            <li>Angular</li>
-            <li>Javascript</li>
-            <li>Typescript</li>
-            <li>Bootstrap</li>
-            <li>Node.js</li>
-            <li>Express.js</li>
-            <li>VS code</li>
-            <li>Git</li>
-            <li>Docker</li>
-            <li>AWS</li>
+        <ul class="education-list">
+            <li>
+                West Virginia University 2012-2019 DDS
+            </li>
+            <li>
+                Southern New Hampshire University 2021-2023 BS in Computer Science
+            </li>
         </ul>
     </div>
-    <div class="projects">
-        <h3>Personal Projects</h3>
-        <dl>
-            <dt><a target=" blank" href="http://todolist-angular.s3-website.us-east-2.amazonaws.com">To Do List Application</a></dt>
-            <dd>First application made using Angular frontend and Node.js, Express.js, and MongoDB backend. Deployed using AWS S3 and ECS with Fargate. Application includes user account creation, login with authorization, ability for user to add, edit, and delete to do list items associated with their account. </dd>
-            <dt><a target="blank" href="http://tictactoe-angular.s3-website.us-east-2.amazonaws.com">Multiplayer TicTacToe</a></dt>
-            <dd>Multiplayer tic-tac-toe application using Angular frontend Node.js, Express.jsm and MongoDB backend. Deployed using AWS S3 and ECS with Fargate. Application includes user account creation, login with authentication, websocket connection and websocket rooms for gameplay, and SCSS used for user theme selection stored in browser storage.</dd>
-            <dt><a target="blank" href="http://chasityshairpage.com">Hairstylist Site</a></dt>
-            <dd>Hairstylist profile site for client created using Angular. Contains home page, service page, stylist portfolio page, and location/contact page. Includes request form which sends email to the stylist for event booking, link to stylists Square account for online appointment booking, and location represented with Google Maps.</dd>
-        </dl>
-    </div>
-    <div class="github">
-        <h4>Link to github with above projects and some other school based projects.</h4>
-        <a href="https://github.com/Snhamrick">Seth's Github</a>
+    <div class="container">
+        <div class="skill-container">
+            <h3>Skills, Frameworks, and Tools</h3>
+            <ul class="skills">
+                <li>HTML <fa-icon [icon]="htmlIcon"></fa-icon></li>
+                <li>CSS <fa-icon [icon]="cssIcon"></fa-icon></li>
+                <li>SCSS <fa-icon [icon]="sassIcon"></fa-icon></li>
+                <li>Bootstrap <fa-icon [icon]="bootstrapIcon"></fa-icon></li>
+                <li>Node.js <fa-icon [icon]="nodeIcon"></fa-icon></li>
+                <li>Git <fa-icon [icon]="gitIcon"></fa-icon></li>
+                <li>Docker <fa-icon [icon]="dockerIcon"></fa-icon></li>
+                <li>AWS <fa-icon [icon]="awsIcon"></fa-icon></li>
+                <li>Angular <fa-icon [icon]="angularIcon"></fa-icon></li>
+                <li>JavaScript <fa-icon [icon]="jsIcon"></fa-icon></li>
+                <li>TypeScript</li>
+                <li>VS code</li>
+            </ul>
+        </div>
+        <div class="projectClick">
+            <h3 (click)="expandProjects()">View My Personal Projects Here</h3>
+        </div>
+        <div class="project-container">
+            <dl *ngIf="projectsExpanded">
+                <div class="project">
+                    <dt><a target=" blank" href="http://todolist-angular.s3-website.us-east-2.amazonaws.com">To Do List Application <img class="project-icon" src="../../assets/images/checkMark.png"></a></dt>
+                    <dd>First application made using Angular frontend and Node.js, Express.js, and MongoDB backend. Deployed using AWS S3 and ECS with Fargate. Application includes user account creation, login with authorization using JWT, ability for user to add, edit, and delete to do list items associated with their account. </dd>
+                </div>
+                <div class="project">
+                    <dt><a target="blank" href="http://tictactoe-angular.s3-website.us-east-2.amazonaws.com">Multiplayer TicTacToe <img class="project-icon"src="../../assets/images/tictactoe_clipart.png"></a></dt>
+                    <dd>Multiplayer tic-tac-toe application using Angular frontend Node.js, Express.js and MongoDB backend. Deployed using AWS S3 and ECS with Fargate. Application includes user account creation, login with authentication using JWT, WebSocket connection and WebSocket rooms for gameplay, and SCSS used for user theme selection stored in browser storage.</dd>
+                </div>
+                <div class="project">
+                    <dt><a target="blank" href="http://chasityshairpage.com" >Hairstylist Site <img class="project-icon" src="../../assets/images/scissor_logo.png"></a></dt>
+                    <dd>Hairstylist profile site for client created using Angular. Contains home page, service page, stylist portfolio page, and location/contact page. Includes request form which sends email to the stylist for event booking, link to stylists Square account for online appointment booking, and location represented with Google Maps.</dd>
+                </div>
+                <div class="project">
+                    <dt><a target="blank" href="http://exerciseapp.s3-website.us-east-2.amazonaws.com">Exercise Database <img class="project-icon"src="../../assets/images/icon.webp"></a></dt>
+                    <dd>Exercise Database created using Angular frontend and Node.js, Express.js and MongoDB backend. Responsive layout generated using CSS and SCSS without the use of framework such as Boostrap.js. Application provides access to exercises for target muscles with step by step and youtube video instructions. Responsive image mapping to select target muscles. Additionally, users may generate random workouts for up to 5 muscles using the exercises within the database. Backend deployed as container using Docker, ECR, and ECS with fargate. Frontent deplopyed using AWS S3.</dd>
+                </div>
+            </dl>
+        </div>
+        <div class="github-container">
+            <a target="blank" href="https://github.com/Snhamrick">Github Account <fa-icon [icon]="githubIcon"></fa-icon></a>
+        </div>
     </div>
 </div>
